@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <navigator url="/pages/search/search">
+    <button>搜索</button>
+  </navigator>
+</view>

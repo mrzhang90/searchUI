@@ -1,0 +1,3 @@
+<!--pages/search/search.wxml-->
+<import src="/component/wxSearch/wxSearch"></import>
+<template is="wxSearch" data="{{...tabData}}"></template>

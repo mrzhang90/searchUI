@@ -1,0 +1,2 @@
+/* pages/search/search.wxss */
+@import '../../component/wxSearch/wxSearch'

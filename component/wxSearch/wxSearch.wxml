@@ -1,0 +1,36 @@
+<template name="wxSearch">
+  <view class="head_search">
+    <input class="text_search colorGray" type='text' confirm-type="search" placeholder="请输入院校或专业名称" placeholder-class="colorGray" bindfocus="bindShowLog" bindinput="bindInputSchool" value="{{inputVal}}"></input>
+    <icon class="icon_search" type='search' size="15" bindtap="bindGoSearch"></icon>
+  </view>
+
+  <view class="result_search" hidden="{{searchIsHidden}}" bindtap='bindSearchHidden'>
+    <view class='list_search'>
+      <view class='li_list_search' wx:for="{{searchList}}" wx:key="{{index}}" wx:if="{{index<3 || searchAllShow}}" catchtap="bindGoSchool" data-item="{{item}}">
+        <view class="icon-waiting">
+          <image src="/assets/images/icon-waiting.png"></image>
+        </view>
+        <text class="pl30 colGray">{{item}}</text>
+        <view class='icon-cancel rightFlex' catchtap="bindDelLog" data-item="{{item}}">
+          <image src="/assets/images/icon-cancel.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="li_list_search" catchtap="bindSearchAllShow" wx:if="{{searchList.length>3 && !searchAllShow}}">
+      <view class="icon-waiting"></view>
+      <text class="pl30 colGray">全部搜索记录</text>
+      <view class='icon-down rightFlex'>
+        <image src="/assets/images/icon-down.png"></image>
+      </view>
+    </view>
+    <view class='li_list_search' catchtap="bindClearSearch" wx:if="{{searchList.length>0 && searchAllShow}}">
+      <text class="ui-col colGray tc">清除搜索记录</text>
+    </view>
+    <view class='hots_search' wx:if="{{!searchAllShow || searchList.length==0}}">
+      <view class='title_hotsSearch colGray'>热门搜索</view>
+      <view class="list_hotsSearch">
+        <text wx:for="{{hotsSearch}}" wx:key="{{index}}" catchtap="bindGoSchool" data-item="{{item}}">{{item}}</text>
+      </view>
+    </view>
+  </view>
+</template>
