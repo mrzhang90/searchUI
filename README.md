@@ -23,24 +23,24 @@
 ## 使用
 #### 1.将component下的wxSearch放入项目中
 #### 2.引入wxSearch的方法
-	```js
-		import * as wxSearch from '../../component/wxSearch/wxSearch';
+```js
+import * as wxSearch from '../../component/wxSearch/wxSearch';
 
-		onLoad: function (options) {
-	    	//初始渲染-读取storage的历史记录
-	    	wxSearch.init(this)
-	  	}
-	```
+onLoad: function (options) {
+//初始渲染-读取storage的历史记录
+    wxSearch.init(this)
+}
+```
 #### 3.引入wxSearch的模板文件
-	```js
-		<import src="/component/wxSearch/wxSearch"></import>
+```js
+<import src="/component/wxSearch/wxSearch"></import>
 
-		<template is="wxSearch" data="{{...tabData}}"></template>
-	```
+<template is="wxSearch" data="{{...tabData}}"></template>
+```
 #### 4.引入wxSearch的样式文件
-	```js
-		@import '../../component/wxSearch/wxSearch'
-	```
+```js
+@import '../../component/wxSearch/wxSearch'
+```
 
 ## 说明
 
